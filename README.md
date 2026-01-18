@@ -1,21 +1,5 @@
-# Next.js Rendering Patterns – Teaching Template Guide
 
-This document is designed to help an agent set up a **single Next.js project** that demonstrates **all major rendering patterns** in modern Next.js (App Router, Next.js 13+ / 14+). The goal is to make the project a **teaching and reference tool**, where each route clearly shows *when*, *where*, and *why* a rendering strategy is used.
-
----
-
-## 0. Project Assumptions
-
-* **Next.js App Router** (`app/` directory)
-* **TypeScript enabled**
-* Uses **React Server Components (default)**
-* Tailwind or minimal styling (not essential)
-* Data fetching uses `fetch()` with cache options
-
----
-
-## 1. Folder & Route Structure (High-Level)
-
+## 1. Folder Structure
 ```
 app/
 ├── layout.tsx
@@ -40,7 +24,6 @@ app/
     └── time/route.ts
 ```
 
-Each route demonstrates **exactly one primary rendering pattern**.
 
 ---
 
@@ -281,31 +264,3 @@ Should:
   * `Static`
   * `Dynamic`
   * `Client`
-
----
-
-## 6. Summary Table (For Learners)
-
-| Pattern   | Where Rendered | Cached   | SEO | JS Sent |
-| --------- | -------------- | -------- | --- | ------- |
-| SSG       | Build          | Yes      | Yes | Minimal |
-| SSR       | Server         | No       | Yes | Minimal |
-| ISR       | Server         | Timed    | Yes | Minimal |
-| CSR       | Browser        | No       | No  | Full    |
-| RSC       | Server         | Optional | Yes | None    |
-| Streaming | Server         | Optional | Yes | Minimal |
-| PPR       | Mixed          | Partial  | Yes | Minimal |
-
----
-
-## 7. Goal Outcome
-
-After setup, this project should:
-
-* Serve as a **living Next.js rendering reference**
-* Allow learners to **see behavior differences instantly**
-* Be easy to extend as Next.js evolves
-
----
-
-**This document can be handed directly to an agent as implementation instructions.**
