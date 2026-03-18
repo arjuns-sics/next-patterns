@@ -19,7 +19,7 @@ useEffect(() => {
     hasRedirected.current = true;
 
     alert('Please fill step one first');
-    router.push('/form/step-1');
+    router.push('/form/form1');
   }
 }, [stepOne, router]);
 

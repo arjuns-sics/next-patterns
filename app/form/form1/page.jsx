@@ -46,31 +46,31 @@ export default function StepOnePage() {
           <div>
             <label>Name</label>
             <input {...register('name')} />
-            <p>{errors.name?.message}</p>
+            <p style={{color:"red"}}>{errors.name?.message}</p>
           </div>
 
           <div>
             <label>Email</label>
             <input type="email" {...register('email')} />
-            <p>{errors.email?.message}</p>
+            <p style={{color:"red"}}>{errors.email?.message}</p>
           </div>
 
           <div>
             <label>Password</label>
             <input type="password" {...register('password')} />
-            <p>{errors.password?.message}</p>
+            <p style={{color:"red"}}>{errors.password?.message}</p>
           </div>
 
           <div>
             <label>Age</label>
             <input type="number" {...register('age')} />
-            <p>{errors.age?.message}</p>
+            <p style={{color:"red"}}>{errors.age?.message}</p>
           </div>
 
           <div>
             <label>Phone</label>
             <input {...register('phone')} placeholder="+62..." />
-            <p>{errors.phone?.message}</p>
+            <p style={{color:"red"}}>{errors.phone?.message}</p>
           </div>
 
           <button type="submit" style={{ marginTop: '1rem' }}>
