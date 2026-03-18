@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -12,16 +12,22 @@ export default function StepThreePage() {
   const router = useRouter();
   const { stepOne, stepTwo, stepThree, setData } = useFormStore();
 
-  // Guard steps
-  useEffect(() => {
-    if (!stepOne) {
-      alert('Please fill step one first');
-      router.push('/form/form1');
-    } else if (!stepTwo) {
-      alert('Please fill step two first');
-      router.push('/form/form2');
-    }
-  }, [stepOne, stepTwo, router]);
+const hasRedirected = useRef(false);
+
+// Guard steps
+useEffect(() => {
+  if (hasRedirected.current) return;
+
+  if (!stepOne) {
+    hasRedirected.current = true;
+    alert('Please fill step one first');
+    router.replace('/form/form1');
+  } else if (!stepTwo) {
+    hasRedirected.current = true;
+    alert('Please fill step two first');
+    router.replace('/form/form2');
+  }
+}, [stepOne, stepTwo, router]);
 
   const methods = useForm({
     mode: 'onTouched',
