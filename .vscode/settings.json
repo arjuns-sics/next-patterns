@@ -1,3 +1,4 @@
 {
-  "discord.enabled": false
+  "discord.enabled": false,
+  "js/ts.tsdk.path": "node_modules\\typescript\\lib"
 }

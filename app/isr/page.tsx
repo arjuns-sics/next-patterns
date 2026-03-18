@@ -3,6 +3,8 @@
 // How to implement: Use next: { revalidate: 10 }
 // Teaching points: Page is cached, rebuilt after interval, old content served while revalidating
 
+export const revalidate = 10; // Revalidate every 10 seconds
+
 async function getData() {
   // This fetch will be cached but revalidated every 10 seconds
   const res = await fetch('http://localhost:3000/api/time', { 

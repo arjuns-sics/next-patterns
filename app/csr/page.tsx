@@ -18,7 +18,7 @@ export default function CSRPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [renderTime, setRenderTime] = useState(new Date().toISOString());
-
+ const [val,setVal] = useState("")
   useEffect(() => {
     async function fetchData() {
       try {
@@ -53,6 +53,8 @@ export default function CSRPage() {
                 Rendering happens in browser • JS required
               </p>
             </div>
+            <button onClick={()=>{setVal("hi jest")}}>test</button>
+            <p>{val}</p>
             <div className="flex gap-2">
               <span className="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100 text-sm font-mono font-medium rounded-full">
                 Browser

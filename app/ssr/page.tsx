@@ -2,6 +2,7 @@
 // Concept: Rendered on every request. Always fresh data.
 // How to implement: Use cache: 'no-store'
 // Teaching points: Runs on server for every request, useful for dashboards, auth-based pages
+export const dynamic = 'force-dynamic';
 
 async function getData() {
   // This fetch will NOT be cached - fresh data on every request
